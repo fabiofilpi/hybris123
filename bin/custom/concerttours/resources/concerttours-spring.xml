@@ -43,6 +43,7 @@
         <property name = "productService" ref = "productService" />
     </bean>
     <!-- Hybris123SnippetEnd -->
+
     <!-- Hybris123SnippetStart injectingConcerttoursCustomSetup -->
     <bean id="concerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup" >
         <property name="importService" ref="importService"/>
@@ -111,8 +112,6 @@
       -->
 
 
-
-
     <!-- Hybris123SnippetStart injectingConcertDaysUntilAttributeHandler -->
     <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
     <!-- Hybris123SnippetEnd -->
@@ -123,6 +122,16 @@
     </bean>
     <!-- Hybris123SnippetEnd -->
 
+    <!-- Hybris123SnippetStart injectingInterceptor -->
+    <bean id="bandAlbumSalesInterceptor" class="concerttours.interceptors.BandAlbumSalesInterceptor" />
+    <bean id="bandInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="bandAlbumSalesInterceptor" />
+        <property name="typeCode" value="Band" />
+    </bean>
+    <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener" parent="abstractEventListener" >
+        <property name="modelService" ref="modelService" />
+    </bean>
+    <!-- Hybris123SnippetEnd -->
     <bean id="concerttoursSystemSetup" class="concerttours.setup.ConcerttoursSystemSetup">
 
         <constructor-arg ref="concerttoursService"/>
@@ -133,6 +142,5 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
-
 
 </beans>
