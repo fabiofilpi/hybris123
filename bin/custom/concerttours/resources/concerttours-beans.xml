@@ -66,7 +66,6 @@
 
 	-->
 
-<!-- Hybris123SnippetStart concerttours-beans.xml_facadelayer -->      
  <bean class = "concerttours.data.TourSummaryData">
          <description >Data object for a tour summary which has no equivalent on the type system</description>
         <property name = "id" type = "String" />
@@ -82,20 +81,23 @@
          <property name = "genres" type="java.util.List&lt;String&gt;"/>
          <property name = "tours" type="java.util.List&lt;concerttours.data.TourSummaryData&gt;"/>
   </bean>
- <bean class = "concerttours.data.ConcertSummaryData">
+  
+<!-- Hybris123SnippetStart concerttours-beans.xml_dynamicattributes -->      
+  <bean class = "concerttours.data.ConcertSummaryData">
          <description >Data object for a concert summary</description>
          <property name = "id" type = "String" />
          <property name = "date" type = "java.util.Date" />
          <property name = "venue" type = "String" />
-         <property name = "type" type = "String" />
+         <property name = "type" type = "String" /> 
+         <property name = "countDown" type="Long"/>
   </bean>
+<!-- Hybris123SnippetEnd -->
+
   <bean class = "concerttours.data.TourData" >
          <description>Data object representing a tour</description>
          <property name = "id" type = "String" />
          <property name = "tourName" type = "String" />
          <property name = "description" type = "String" />
          <property name = "concerts" type="java.util.List&lt;concerttours.data.ConcertSummaryData&gt;"/>
-    </bean>    
-<!-- Hybris123SnippetEnd -->
-    
+    </bean>
 </beans>
