@@ -28,9 +28,7 @@
      </bean>
     <!-- Hybris123SnippetEnd -->
 
-     <!--
-     Hybris123SnippetStart injectingDefaultBandFacade
-      -->
+     <!--  Hybris123SnippetStart injectingDefaultBandFacade -->
     <alias name = "defaultBandFacade" alias = "bandFacade" />
     <bean id = "defaultBandFacade" class ="concerttours.facades.impl.DefaultBandFacade" >
         <property name = "bandService" ref = "bandService" />
@@ -38,9 +36,7 @@
     <!-- Hybris123SnippetEnd -->
 
 
-     <!--
-     Hybris123SnippetStart injectingDefaultTourFacade
-      -->
+     <!-- Hybris123SnippetStart injectingDefaultTourFacade -->
     <alias name = "defaultTourFacade" alias = "tourFacade" />
     <bean id = "defaultTourFacade" class ="concerttours.facades.impl.DefaultTourFacade" >
         <property name = "productService" ref = "productService" />
@@ -52,7 +48,6 @@
     	<property name="importService" ref="importService"/>
 	</bean>
 	<!-- Hybris123SnippetEnd -->
-
 
 	<!--
 	The hybris platform provides one single Spring application context for beans located at the jalo layer.
@@ -114,6 +109,12 @@
 	      	            !execution(* getPK(..))" />
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />
 	  -->
+
+
+    
+     <!-- Hybris123SnippetStart injectingConcertDaysUntilAttributeHandler -->
+    <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
+ 	<!-- Hybris123SnippetEnd -->
     <bean id="concerttoursSystemSetup" class="concerttours.setup.ConcerttoursSystemSetup">
 
         <constructor-arg ref="concerttoursService"/>
@@ -125,5 +126,4 @@
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
     
-
 </beans>
