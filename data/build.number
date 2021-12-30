@@ -1,9 +1,9 @@
 #Ant properties
-#Thu Dec 30 05:55:27 AMT 2021
+#Thu Dec 30 05:58:19 AMT 2021
 build.version=2011.13
 build.vendor=hybris
 build.group.id=de.hybris.platform
 build.module.name=platform-module
-build.builddate=20211230 0555
+build.builddate=20211230 0558
 build.version.api=2011
 build.releasedate=20211103 1211
