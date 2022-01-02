@@ -24,7 +24,7 @@ import de.hybris.platform.core.Registry;
 import org.springframework.jdbc.core.JdbcTemplate;
  
 @IntegrationTest
-public class DefaultBandServiceIntegrationTest extends ServicelayerTest
+public class    DefaultBandServiceIntegrationTest extends ServicelayerTest
 {
     @Resource
     private BandService bandService;
@@ -86,6 +86,7 @@ public class DefaultBandServiceIntegrationTest extends ServicelayerTest
     public void testBandServiceTours() throws Exception
     {
         createCoreData();
+        importCsv("/impex/essentialdata-mediaformats.impex", "UTF-8");
         importCsv("/impex/concerttours-bands.impex", "utf-8");
         importCsv("/impex/concerttours-yBandTour.impex", "utf-8");
         final BandModel band = bandService.getBandForCode("A001");

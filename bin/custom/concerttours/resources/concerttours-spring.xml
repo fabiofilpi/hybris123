@@ -31,7 +31,8 @@
     <!--  Hybris123SnippetStart injectingDefaultBandFacade -->
     <alias name = "defaultBandFacade" alias = "bandFacade" />
     <bean id = "defaultBandFacade" class ="concerttours.facades.impl.DefaultBandFacade" >
-        <property name = "bandService" ref = "bandService" />
+        <property name="bandService" ref="bandService" />
+        <property name="mediaService" ref="mediaService"/>
     </bean>
     <!-- Hybris123SnippetEnd -->
 
